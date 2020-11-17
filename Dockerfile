@@ -1,4 +1,4 @@
-FROM node:8
+FROM node:15
 
 ENV HOST localhost
 ENV PORT 3000
@@ -14,7 +14,7 @@ RUN npm install -g --production node-gyp && \
 # Install Gekko dependencies
 COPY package.json .
 RUN npm install --production && \
-    npm install --production redis@0.10.0 talib@1.0.2 tulind@0.8.7 pg && \
+    npm install --production redis@0.10.0 talib@1.1.3 tulind@0.8.18 pg && \
     npm cache clean --force
 
 # Install Gekko Broker dependencies
