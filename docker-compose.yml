@@ -2,6 +2,7 @@ version: '3'
 services:
   gekko:
     build: ./
+    restart: always
     volumes:
       - ./volumes/gekko/history:/usr/src/app/history
       - ./config.js:/usr/src/app/config.js
@@ -21,6 +22,7 @@ services:
 #     - DOMAIN=gekko
 
   redis:
+    restart: always
     image: redis:latest
     volumes:
       - ./volumes/redis:/data
